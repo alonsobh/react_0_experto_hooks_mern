@@ -73,3 +73,8 @@ giphy https://developers.giphy.com/
     https://developers.giphy.com/dashboard/
     create API
     https://developers.giphy.com/docs/api/endpoint#random
+
+
+Vite
+    npm create vite
+    
