@@ -5,6 +5,6 @@ import './styles.css'
 
 ReactDOM.createRoot( document.getElementById('root') ).render(
     <React.StrictMode>
-        <FirstApp></FirstApp>
+        <FirstApp number={ 123 }></FirstApp>
     </React.StrictMode>
 )
