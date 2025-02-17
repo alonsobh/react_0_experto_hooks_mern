@@ -1,4 +1,4 @@
-const heroes = [
+const heroesEndOfFileDefault = [
     {
         id: 1,
         name: 'Batman',
@@ -26,9 +26,7 @@ const heroes = [
     },
 ];
 
-const owners = ['DC', 'Marvel'];
 
-export { 
-    heroes as default, 
-    owners,
-};
+export const ownersEndOfFileDefault = ['DC', 'Marvel'];
+
+export default heroesEndOfFileDefault;
