@@ -66,3 +66,10 @@ Create React App - CRA
     start application: npm start
 
 JS Documentation Mozilla MDN https://developer.mozilla.org/es/
+
+
+giphy https://developers.giphy.com/
+
+    https://developers.giphy.com/dashboard/
+    create API
+    https://developers.giphy.com/docs/api/endpoint#random
