@@ -28,3 +28,33 @@ Instalar
     4 Mongo Compass https://www.mongodb.com/try/download/compass
     5 Git 
     6 Node v18.20.6
+
+
+Babel  http://babeljs.io/
+
+Test
+        const restApi = {
+        personajes: ['Goku',"Vegeta"]
+        }
+
+        console.log(restApi.personajes.length);
+    Expect
+        2
+Error
+        const restApi = {
+        //personajes: ['Goku',"Vegeta"]
+        }
+
+        console.log(restApi.personajes?.length);
+    Expect
+        VM128:5 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+        at <anonymous>:5:32
+
+Fix
+        const restApi = {
+        //personajes: ['Goku',"Vegeta"]
+        }
+
+        console.log(restApi.personajes?.length);
+    Expect 
+        undefined
