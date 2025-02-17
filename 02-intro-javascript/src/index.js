@@ -1,4 +1,5 @@
 import { heroes } from './data/heroes'
+import cualquierNombre from './data/heroes-export-default'
 
 console.log( heroes )
 
@@ -11,3 +12,5 @@ const getHeroesByOwner = ( owner ) => heroes.filter( (heroe) => heroe.owner === 
 
 console.log( getHeroesByOwner( 'DC' ) );
 console.log( getHeroesByOwner( 'Marvel' ) );
+
+console.log( cualquierNombre );
