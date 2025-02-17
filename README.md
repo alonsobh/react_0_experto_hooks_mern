@@ -64,3 +64,5 @@ Create React App - CRA
     npx create-react-app my-app
 
     start application: npm start
+
+JS Documentation Mozilla MDN https://developer.mozilla.org/es/
