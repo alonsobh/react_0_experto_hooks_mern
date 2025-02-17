@@ -1,23 +1,66 @@
-import { heroesExport } from './data/heroes-export'
-import cualquierNombre from './data/heroes-export-default'
-import heroesEndOfFileDefault, { ownersEndOfFileDefault } from './data/heroes-export-end-of-file-default'
-import { heroesExportEndOfFile, ownersExportEndOfFile } from './data/heroes-export-end-of-file'
-import heroes, { owners } from './data/heroes'
+import { getHeroesById } from "./bases/08-imp-exp-get-heroes-by-id";
 
-console.log( heroes )
+const now = Date.now();
+console.log(now);
+const promesaIncompleta = new Promise( (resolve, reject ) =>{
+    setTimeout( () => {
+        console.log('2 segundos despues incompleta ' + ( Date.now() - now));
+    }, 2000)
+});
 
-const getHeroesById = ( id ) => heroes.find( (heroe) => heroe.id === id );
+promesaIncompleta.then(() => {
+    console.log(Date.now());
+    console.log('Then de la promesa incompleta ' + ( Date.now() - now));
+} )
 
-console.log( getHeroesById( 2 ) );
 
-const getHeroesByOwner = ( owner ) => heroes.filter( (heroe) => heroe.owner === owner );
+const promesa = new Promise( (resolve, reject ) =>{
+    setTimeout( () => {
+        console.log('2 segundos despues ' + ( Date.now() - now));
+        resolve();
+    }, 2000)
+});
 
+promesa.then(() => {
+    console.log('Then de la promesa ' + ( Date.now() - now));
+} )
 
-console.log( getHeroesByOwner( 'DC' ) );
-console.log( getHeroesByOwner( 'Marvel' ) );
+const promesaError = new Promise( (resolve, reject ) => {
+    setTimeout( () => {
+        console.log('2 segundos despues error ' + ( Date.now() - now));
+        reject( 'Rechazado' );
+    }, 2000)
+});
 
-console.log( heroesExport );
-console.log( cualquierNombre );
-console.log( heroesEndOfFileDefault, ownersEndOfFileDefault );
-console.log( heroesExportEndOfFile, ownersExportEndOfFile );
-console.log( heroes, owners );
+promesaError.then(() => {
+    console.log('Then de la promesa ' + ( Date.now() - now));
+} )
+.catch(() => {
+    console.log('Catch de la promesa ' + ( Date.now() - now));
+} )
+
+const getHeroesByIdAsync = (id) =>{
+    return new Promise( (resolve, reject ) => {
+        const heroe = getHeroesById( id );
+        if (heroe)
+        resolve (heroe);
+        else
+        reject('Heroe no encontrado')
+    });
+}
+
+const callGetHeroesByIdAsync = (id) => {
+   getHeroesByIdAsync(id)
+   .then( heroe => console.log('heroe', heroe))
+   .catch( err => console.warn(err, `heroe ${id} not found`) ) ;
+}
+
+const callGetHeroesById2Async = (id) => {
+    getHeroesByIdAsync(id)
+    .then( console.log )
+    .catch( console.warn ) ;
+ }
+ callGetHeroesByIdAsync(4);
+ callGetHeroesByIdAsync(10);
+ callGetHeroesById2Async(4);
+ callGetHeroesById2Async(10);
