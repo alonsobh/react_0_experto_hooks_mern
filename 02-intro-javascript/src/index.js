@@ -1,3 +1,5 @@
 
+// Variables y Constantes
 
-console.log('Hola Mundo');
+const nombre = 'Fernando';
+let
