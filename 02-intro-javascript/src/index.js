@@ -16,3 +16,17 @@ console.log( persona.nombre );
 console.log( { persona:persona } );
 console.log( { persona } );
 console.table( persona );
+
+const persona2 = {...persona};
+persona2.nombre = 'Peter'
+
+console.log( persona )
+console.log( persona2 )
+
+persona.nombre = 'Tony'
+
+const persona3 = {...persona};
+persona3.nombre = 'Peter'
+
+console.log( persona )
+console.log( persona3 )
