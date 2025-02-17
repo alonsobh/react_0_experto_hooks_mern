@@ -58,3 +58,7 @@ Fix
         console.log(restApi.personajes?.length);
     Expect 
         undefined
+
+Create React App - CRA
+    Vite https://vite.dev/guide/
+    npx create-react-app my-app
