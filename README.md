@@ -62,3 +62,5 @@ Fix
 Create React App - CRA
     Vite https://vite.dev/guide/
     npx create-react-app my-app
+
+    start application: npm start
