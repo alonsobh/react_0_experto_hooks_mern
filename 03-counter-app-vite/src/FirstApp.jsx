@@ -6,7 +6,7 @@ const arrayMessage = [ 1,2,3,4,5,6,7,8,9 ];
 const objectMessage = { titulo: stringMessage};
 const getMessage = () => "Function";
 
-const FirstApp = () => {
+const FirstApp = ( props ) => {
   return (
     <>
         <h1>string: { stringMessage }</h1>
@@ -21,6 +21,7 @@ const FirstApp = () => {
           Estos comentarios no salen en los Elements
         */}
         <h1>function: { getMessage() }</h1>
+        <h1> props title: { props.title }</h1>
         <p>Soy un subtitulo</p>
     </>
   )
